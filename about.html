@@ -11,7 +11,7 @@
   <header class="site-header">
     <nav class="site-nav">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo/black-Z.png" alt="Zeke Zalinski" height="40">
+        <img src="images/logo/black-Z.png" alt="Zeke Zalinski">
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -27,10 +27,41 @@
   </header>
 
   <main>
-    <div class="container page-content">
-      <h1>About</h1>
-      <p class="placeholder-note">[About — hero photo, body copy, tagline "We are the experiences we have and create.", location line "Zeke Zalinski – Chicago, IL" — see specs/site-spec-v1.md]</p>
-    </div>
+
+    <!-- Rotating hero -->
+    <section class="about-hero" aria-label="Photos of Pete Zalinski">
+      <div class="about-hero-images">
+        <img src="images/about/hero1.png" class="about-hero-img active" alt="Pete Zalinski">
+        <img src="images/about/hero2.png" class="about-hero-img" alt="Pete Zalinski">
+        <img src="images/about/hero3.png" class="about-hero-img" alt="Pete Zalinski">
+      </div>
+      <div class="about-hero-dots" aria-hidden="true">
+        <span class="about-dot active"></span>
+        <span class="about-dot"></span>
+        <span class="about-dot"></span>
+      </div>
+    </section>
+
+    <!-- About content -->
+    <section class="about-content">
+      <div class="container about-container">
+
+        <p class="about-tagline">We are the experiences we have and create.</p>
+
+        <div class="about-body">
+          <p>I'm an experience person. I draw so much inspiration and happiness from the experiences that I have, and in the ones that I help create on the job. I think that every trip taken, every dinner had with friends, every group of friends or coworkers and of course every project at work is a collection of experiences that a positive attitude and inspired ideas can influence.</p>
+          <p>I dare say that we all want our life to be smooth no matter at home or work. I put in the time in my personal life to achieve a balance with family and friends, and I bring that effort to the table when I partner with a company or join a team. I enjoy people that can take the time to ask themselves, "What are we solving for?" I feel if we can pause from time to time and ask that question, great work can be done.</p>
+          <p>Enjoying life experiences as an artist, designer, creative, husband, father, son and friend.</p>
+        </div>
+
+        <div class="about-meta">
+          <span class="about-location">Zeke Zalinski &mdash; Chicago, IL</span>
+          <a href="https://instagram.com/petezal" class="about-instagram" target="_blank" rel="noopener noreferrer">@petezal on Instagram</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
