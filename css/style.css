@@ -618,8 +618,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-4) 0;
+  padding: var(--space-5) 0;
   border-bottom: 1px solid var(--color-border);
+}
+
+.timeline-content p,
+.timeline-bullets {
+  max-width: 600px;
 }
 
 .timeline-entry:first-child {
@@ -632,16 +637,16 @@ main {
 
 .timeline-dates {
   font-family: var(--font-base);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
-  color: var(--color-orange);
+  color: var(--color-text);
   letter-spacing: 0.02em;
 }
 
 @media (min-width: 768px) {
   .timeline-entry {
     flex-direction: row;
-    gap: var(--space-4);
+    gap: var(--space-8);
     align-items: flex-start;
   }
 
@@ -653,6 +658,7 @@ main {
 
   .timeline-content {
     flex: 1;
+    max-width: 600px;
   }
 }
 
@@ -807,8 +813,9 @@ main {
   .timeline-meta {
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-3);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
   }
 }
 
@@ -816,12 +823,23 @@ main {
   font-family: var(--font-base);
   font-weight: 700;
   font-size: 18px;
-  color: var(--color-text);
+  color: var(--color-orange);
   line-height: 1.3;
 }
 
-/* .timeline-dates already defined in the base EXPERIENCE TIMELINE block above;
-   no override needed — weight 300, color orange, 14px is correct. */
+.timeline-title::after {
+  content: "\00a0\00a0\005C\00a0\00a0";
+  font-weight: 300;
+  color: var(--color-text-light);
+}
+
+.timeline-dates {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
 
 /* Logo images — constrain and contain within their column */
 .timeline-logo img {
