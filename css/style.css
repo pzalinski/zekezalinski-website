@@ -21,11 +21,10 @@
    3. The @font-face declarations below are ready — just add the files.
    -------------------------------------------------------------------------- */
 
-/* @font-face declarations (ready to activate once font files are in place) */
+/* @font-face declarations — using TTF files (installed 2026-06-25) */
 @font-face {
   font-family: 'AllerDisplay';
-  src: url('../fonts/AllerDisplay.woff2') format('woff2'),
-       url('../fonts/AllerDisplay.woff') format('woff');
+  src: url('../fonts/AllerDisplay.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -33,8 +32,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_Bd.woff2') format('woff2'),
-       url('../fonts/Aller_Bd.woff') format('woff');
+  src: url('../fonts/Aller_Bd.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -42,8 +40,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_BdIt.woff2') format('woff2'),
-       url('../fonts/Aller_BdIt.woff') format('woff');
+  src: url('../fonts/Aller_BdIt.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -51,8 +48,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_Rg.woff2') format('woff2'),
-       url('../fonts/Aller_Rg.woff') format('woff');
+  src: url('../fonts/Aller_Rg.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -60,8 +56,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_It.woff2') format('woff2'),
-       url('../fonts/Aller_It.woff') format('woff');
+  src: url('../fonts/Aller_It.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -69,8 +64,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_Lt.woff2') format('woff2'),
-       url('../fonts/Aller_Lt.woff') format('woff');
+  src: url('../fonts/Aller_Lt.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -78,8 +72,7 @@
 
 @font-face {
   font-family: 'Aller';
-  src: url('../fonts/Aller_LtIt.woff2') format('woff2'),
-       url('../fonts/Aller_LtIt.woff') format('woff');
+  src: url('../fonts/Aller_LtIt.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
