@@ -627,10 +627,6 @@ main {
 }
 
 .timeline-entry:first-child {
-  padding-top: 0;
-}
-
-.timeline-entry:first-child {
   padding-top: var(--space-4);
 }
 
