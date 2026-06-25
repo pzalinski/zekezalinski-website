@@ -1,126 +1,785 @@
-/* Zeke Zalinski portfolio — base styles (skeleton pass) */
+/* ==========================================================================
+   Zeke Zalinski Portfolio — Full Design System
+   Built from site-spec-v1.md (2026-06-25)
+   ========================================================================== */
 
-* {
+/* --------------------------------------------------------------------------
+   FONT NOTE: Aller font files could not be downloaded automatically
+   (Font Squirrel blocked by network proxy). Falling back to system
+   sans-serif until fonts are manually installed.
+   
+   TO INSTALL ALLER:
+   1. Download from https://www.fontsquirrel.com/fonts/Aller
+   2. Unzip and place these files in the /fonts/ folder:
+        fonts/AllerDisplay.woff2  (and .woff)
+        fonts/Aller_Bd.woff2      (and .woff)
+        fonts/Aller_BdIt.woff2    (and .woff)
+        fonts/Aller_Rg.woff2      (and .woff)
+        fonts/Aller_It.woff2      (and .woff)
+        fonts/Aller_Lt.woff2      (and .woff)
+        fonts/Aller_LtIt.woff2    (and .woff)
+   3. The @font-face declarations below are ready — just add the files.
+   -------------------------------------------------------------------------- */
+
+/* @font-face declarations (ready to activate once font files are in place) */
+@font-face {
+  font-family: 'AllerDisplay';
+  src: url('../fonts/AllerDisplay.woff2') format('woff2'),
+       url('../fonts/AllerDisplay.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_Bd.woff2') format('woff2'),
+       url('../fonts/Aller_Bd.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_BdIt.woff2') format('woff2'),
+       url('../fonts/Aller_BdIt.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_Rg.woff2') format('woff2'),
+       url('../fonts/Aller_Rg.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_It.woff2') format('woff2'),
+       url('../fonts/Aller_It.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_Lt.woff2') format('woff2'),
+       url('../fonts/Aller_Lt.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_LtIt.woff2') format('woff2'),
+       url('../fonts/Aller_LtIt.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-orange:     #C4673A;
+  --color-blue:       #6B8FA3;
+  --color-text:       #1A1A1A;
+  --color-text-light: #6B6B6B;
+  --color-bg:         #FFFFFF;
+  --color-bg-gray:    #F2F2F0;
+  --color-border:     #E0E0DC;
+
+  /* Typography */
+  --font-display: 'AllerDisplay', 'Aller', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-base:    'Aller', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing (8px base unit) */
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-8:  64px;
+  --space-10: 80px;
+
+  /* Layout */
+  --container-max:     1100px;
+  --container-padding: 24px;
+
+  /* Nav */
+  --nav-height: 64px;
+}
+
+/* ==========================================================================
+   CSS RESET / BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: #1a1a1a;
-  line-height: 1.5;
-  background-color: #ffffff;
+  font-family: var(--font-base);
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
-  color: #1a1a1a;
+  color: inherit;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--color-orange);
 }
 
-header {
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.site-header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.site-title {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-nav ul {
+ul {
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
 }
 
-nav a {
-  font-weight: 500;
+/* ==========================================================================
+   TYPOGRAPHY SCALE (mobile-first)
+   ========================================================================== */
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
+
+.hero-subtitle {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-orange);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.hero-body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.hero-body p + p {
+  margin-top: var(--space-2);
+}
+
+h1, .h1 {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+h2, .h2 {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+h3, .h3 {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.caption,
+.label {
+  font-family: var(--font-base);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+}
+
+.accent {
+  color: var(--color-orange);
+}
+
+/* Desktop type scale */
+@media (min-width: 1024px) {
+  .hero-name {
+    font-size: 96px;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .hero-body {
+    font-size: 18px;
+  }
+
+  h1, .h1 {
+    font-size: 56px;
+  }
+
+  h2, .h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* ==========================================================================
+   NAV / HEADER
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Hamburger toggle — visible on mobile only */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  min-height: 44px;
+  min-width: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X when open */
+.site-nav.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.site-nav.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Nav links — hidden on mobile by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2) 0;
+  z-index: 99;
+}
+
+.site-nav.nav-open .nav-links {
+  display: flex;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--container-padding);
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-text);
+  min-height: 44px;
+}
+
+.nav-links li a:hover {
+  color: var(--color-orange);
+}
+
+.nav-links li a.active {
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Tablet+ — horizontal nav, hide hamburger */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    border-bottom: none;
+    padding: 0;
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  .nav-links li a {
+    padding: 0;
+    min-height: auto;
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* ==========================================================================
+   FOOTER / CONTACT BAND
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-bg-gray);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+}
+
+.footer-cta {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .footer-cta {
+    font-size: 18px;
+    margin-bottom: var(--space-5);
+  }
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .footer-columns {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-label {
+  font-family: var(--font-base);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   ICON BUTTONS (circular orange)
+   ========================================================================== */
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.icon-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+  color: white;
+}
+
+.icon-btn--dark {
+  background-color: var(--color-text);
+}
+
+.icon-row {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
 
 main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem;
   min-height: 50vh;
 }
 
-main h1 {
-  margin-top: 0;
-}
+/* ==========================================================================
+   PLACEHOLDER / DEV NOTES
+   ========================================================================== */
 
 .placeholder-note {
   background-color: #f5f5f5;
   border: 1px dashed #b0b0b0;
   border-radius: 4px;
-  padding: 1rem 1.25rem;
+  padding: var(--space-2) var(--space-2);
   color: #555;
-  font-size: 0.95rem;
+  font-size: 14px;
+  margin-top: var(--space-2);
 }
+
+/* ==========================================================================
+   WORK / CARD GRID (used on work.html and stories.html)
+   ========================================================================== */
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-3);
+  background-color: var(--color-bg);
 }
 
 .card h2 {
-  margin-top: 0;
-  font-size: 1.1rem;
+  margin-bottom: var(--space-1);
 }
 
+.card p {
+  color: var(--color-text-light);
+  font-size: 15px;
+}
+
+.card a {
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: var(--color-orange);
+}
+
+/* ==========================================================================
+   EXPERIENCE TIMELINE
+   ========================================================================== */
+
 .timeline-entry {
-  border-bottom: 1px solid #e0e0e0;
-  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.timeline-entry:first-child {
+  padding-top: 0;
 }
 
 .timeline-entry:last-child {
   border-bottom: none;
 }
 
-.timeline-entry h2 {
-  margin-bottom: 0.25rem;
-}
-
 .timeline-dates {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0 0 0.5rem 0;
+  font-family: var(--font-base);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-orange);
+  letter-spacing: 0.02em;
 }
 
-footer {
-  border-top: 1px solid #e0e0e0;
-  margin-top: 2rem;
+@media (min-width: 768px) {
+  .timeline-entry {
+    flex-direction: row;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  .timeline-logo {
+    flex-shrink: 0;
+    width: 120px;
+    text-align: right;
+  }
+
+  .timeline-content {
+    flex: 1;
+  }
 }
 
-.site-footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  color: #666;
-  font-size: 0.85rem;
-  text-align: center;
+@media (min-width: 1024px) {
+  .timeline-logo {
+    width: 180px;
+  }
+}
+
+/* ==========================================================================
+   IMAGE GRID (work pages)
+   ========================================================================== */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+.image-cell {
+  background-color: var(--color-bg-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.image-cell:hover img {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   STORIES / ARTICLE CARDS
+   ========================================================================== */
+
+.story-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.story-card-img {
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg-gray);
+  overflow: hidden;
+}
+
+.story-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card-body {
+  padding: var(--space-3);
+}
+
+.story-card-body h2 {
+  font-size: 20px;
+  margin-bottom: var(--space-1);
+}
+
+.story-card-body p {
+  font-size: 15px;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2);
+}
+
+.story-card-body a.read-more {
+  color: var(--color-orange);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.story-card-body a.read-more:hover {
+  text-decoration: underline;
+}
+
+.story-card--coming-soon .story-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   PAGE-LEVEL PADDING (replaces old "main" padding)
+   ========================================================================== */
+
+.page-content {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .page-content {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
 }
