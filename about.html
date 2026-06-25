@@ -28,35 +28,76 @@
 
   <main>
 
-    <!-- Rotating hero -->
-    <section class="about-hero" aria-label="Photos of Pete Zalinski">
-      <div class="about-hero-images">
-        <img src="images/about/hero1.png" class="about-hero-img active" alt="Pete Zalinski">
-        <img src="images/about/hero2.png" class="about-hero-img" alt="Pete Zalinski">
-        <img src="images/about/hero3.png" class="about-hero-img" alt="Pete Zalinski">
-      </div>
-      <div class="about-hero-dots" aria-hidden="true">
-        <span class="about-dot active"></span>
-        <span class="about-dot"></span>
-        <span class="about-dot"></span>
+    <!-- Hero: headline left, rotating photo right -->
+    <section class="about-hero-band">
+      <div class="container about-hero-inner">
+
+        <div class="about-hero-text">
+          <h1 class="about-headline">A little bit<br>about myself.</h1>
+          <p class="about-subhead">A design leader who still designs.</p>
+        </div>
+
+        <div class="about-hero-photo">
+          <div class="about-photo-card">
+            <div class="about-hero-images">
+              <img src="images/about/hero1.png" class="about-hero-img active" alt="Pete Zalinski">
+              <img src="images/about/hero2.png" class="about-hero-img" alt="Pete Zalinski">
+              <img src="images/about/hero3.png" class="about-hero-img" alt="Pete Zalinski">
+            </div>
+          </div>
+          <div class="about-hero-dots" aria-hidden="true">
+            <span class="about-dot active"></span>
+            <span class="about-dot"></span>
+            <span class="about-dot"></span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- About content -->
-    <section class="about-content">
-      <div class="container about-container">
+    <!-- Content sections: title left, copy right -->
+    <section class="about-sections">
+      <div class="container">
 
-        <p class="about-tagline">We are the experiences we have and create.</p>
-
-        <div class="about-body">
-          <p>I'm an experience person. I draw so much inspiration and happiness from the experiences that I have, and in the ones that I help create on the job. I think that every trip taken, every dinner had with friends, every group of friends or coworkers and of course every project at work is a collection of experiences that a positive attitude and inspired ideas can influence.</p>
-          <p>I dare say that we all want our life to be smooth no matter at home or work. I put in the time in my personal life to achieve a balance with family and friends, and I bring that effort to the table when I partner with a company or join a team. I enjoy people that can take the time to ask themselves, "What are we solving for?" I feel if we can pause from time to time and ask that question, great work can be done.</p>
-          <p>Enjoying life experiences as an artist, designer, creative, husband, father, son and friend.</p>
+        <div class="about-section">
+          <div class="about-section-title">Origin &amp; Arc</div>
+          <div class="about-section-body">
+            <p>The two most significant roles of my career, I didn't apply for. Someone who had watched me work raised their hand and said my name.</p>
+            <p>At Siteworx, I was Creative Director of their first Chicago office. One of the front-end developers on my team later landed at Maestro Health — a 30-person healthcare startup with a CTO who needed someone who could own the full delivery model: wireframe, concept, design, and boardroom. That developer didn't hesitate. I got a lunch. I got the job. I spent five years at Maestro building the UX department, the process model, and a suite of custom applications that replaced paper with something people actually wanted to use.</p>
+            <p>The CTO I built that relationship with eventually moved to VelocityEHS — and called me again. Not to apply. To come in, look at what was broken, and fix it. I spent a year as a senior designer, quietly assessing. Then I was handed the keys.</p>
+            <p>That's not a career built on applications and interviews. It's a career built on trust, craft, and the kind of work that makes people remember your name when it matters.</p>
+          </div>
         </div>
 
-        <div class="about-meta">
-          <span class="about-location">Zeke Zalinski &mdash; Chicago, IL</span>
-          <a href="https://instagram.com/petezal" class="about-instagram" target="_blank" rel="noopener noreferrer">@petezal on Instagram</a>
+        <div class="about-section">
+          <div class="about-section-title">Leadership Philosophy</div>
+          <div class="about-section-body">
+            <p>I think about design organizations the way a good architect thinks about buildings — the structure has to work before the surfaces can be beautiful. Process, documentation, scope clarity, cross-functional trust: these aren't bureaucratic overhead. They're what let designers do their best work without burning out or reinventing the wheel every sprint.</p>
+            <p>I've built departments from scratch and restructured ones that weren't working. In both cases, the first job is the same: understand the people, understand the gaps, and earn the trust of the team before you change anything. The org chart is the last thing you touch, not the first.</p>
+            <p>I also believe the best design leaders stay close to the craft. Not to micromanage — but because you can't lead what you don't understand. I still sketch. I still push pixels when it matters. I still sit in the room when the hard UX problem needs to be solved. That's not a weakness in a director. That's the difference between someone who leads design and someone who manages designers.</p>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <div class="about-section-title">Thoughts on AI.</div>
+          <div class="about-section-body">
+            <p>My first real use of AI wasn't for design — it was for my team. I wrote short impressions of each person, combined that with their previous goals, and asked AI to help me build the next set. It got me 80% of the way there before I'd finished my coffee. That was the moment I understood what AI actually is: a thinking partner that eliminates the blank page and compresses the distance between intention and direction.</p>
+            <p>The tools I reach for — Figma's Make AI, Lovable — have worked best when they're working from something that already exists. A defined design system. Established architecture. Years of decisions already baked in. That context is what has helped our AI separate its output from generic proof of concepts. Within that structure, AI has meaningfully accelerated ideation, tightened the handoff between design and product, and let teams explore in hours what used to take weeks. It's also shown me its limits: the deeper and more specific the system, the more effort it can be for AI to operate at the required precision. That gap still requires a trained eye, accumulated context, and the kind of judgment you can't prompt your way to.</p>
+            <p>Looking forward, what excites me most isn't AI replacing design work — it's AI putting new product creation into a different gear entirely. The distance from idea to market is collapsing. Prompting agents to execute large-scale effort in hours rather than weeks is real, and I want to be building in that space. The teams I want to lead next are ones where design, architecture, and AI capability are working together from day one — not bolted on after the fact. That's where the interesting work is going to happen.</p>
+          </div>
+        </div>
+
+        <div class="about-section about-section--last">
+          <div class="about-section-title">Experience Through Life</div>
+          <div class="about-section-body">
+            <p>I'm an experience person. I draw inspiration and happiness from the experiences I have and the ones I help create. Every project, every team, every problem worth solving is a collection of moments that a clear head and an inspired idea can change.</p>
+            <p>I dare say we all want our life to be smooth — at home and at work. I put in the time to achieve that balance, and I bring that same intention to every team I join. If you can pause and ask "what are we solving for?" — great work gets done.</p>
+            <p class="about-closing-tagline">We are the experiences we have and create.</p>
+            <div class="about-meta">
+              <span class="about-location">Zeke Zalinski &mdash; Chicago, IL</span>
+              <a href="https://instagram.com/petezal" class="about-instagram" target="_blank" rel="noopener noreferrer">@petezal on Instagram</a>
+            </div>
+          </div>
         </div>
 
       </div>
