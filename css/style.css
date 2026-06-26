@@ -520,6 +520,7 @@ p {
   .footer-columns {
     flex-direction: row;
     gap: var(--space-6);
+    justify-content: space-between;
   }
 }
 
@@ -564,6 +565,10 @@ p {
 
 .icon-btn--dark {
   background-color: var(--color-text);
+}
+
+.icon-btn--orange {
+  background-color: var(--color-orange);
 }
 
 .icon-row {
