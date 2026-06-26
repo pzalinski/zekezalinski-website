@@ -1199,18 +1199,74 @@ main {
    WORK SUB-PAGES — project card hybrid layout
    ========================================================================== */
 
+/* Application project logo — transparent PNG, fixed height */
+.project-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+/* Project title — orange, reuses timeline-title weight/size without the separator */
+.work-project-title {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-orange);
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+
 .work-project-desc {
-  margin-top: var(--space-2);
   max-width: 720px;
   font-size: 16px;
   line-height: 1.75;
   color: var(--color-text);
+  margin-bottom: var(--space-3);
 }
 
 @media (min-width: 768px) {
   .work-project-desc {
     font-size: 17px;
   }
+}
+
+/* Images beyond the first 3 — hidden until expanded */
+.image-cell.more-img {
+  display: none;
+}
+
+.content-section.is-expanded .image-cell.more-img {
+  display: block;
+}
+
+/* More / Less toggle button */
+.project-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-orange);
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 0;
+  margin-top: var(--space-2);
+}
+
+.project-more-btn:hover {
+  text-decoration: underline;
+  color: var(--color-orange);
+}
+
+.project-more-btn .more-icon {
+  transition: transform 0.2s ease;
+}
+
+.content-section.is-expanded .project-more-btn .more-icon {
+  transform: rotate(180deg);
 }
 
 /* Empty image cell — holds shape until real images are dropped in */

@@ -41,4 +41,14 @@
     }, 4000);
   }
 
+  /* ── Work pages: More / Less image expand ─────────────────────── */
+  document.querySelectorAll('.project-more-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var section = btn.closest('.content-section');
+      var isExpanded = section.classList.toggle('is-expanded');
+      btn.querySelector('.more-label').textContent = isExpanded ? 'Less' : 'More';
+      btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    });
+  });
+
 }());
