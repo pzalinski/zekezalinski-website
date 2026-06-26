@@ -604,6 +604,16 @@ main {
 }
 
 /* ==========================================================================
+   CONTENT SECTION — shared border-top + padding for Work, Stories, etc.
+   Matches the about-section / timeline-entry rhythm.
+   ========================================================================== */
+
+.content-section {
+  padding: calc(var(--space-5) + 20px) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
    WORK / CARD GRID (used on work.html and stories.html)
    ========================================================================== */
 
@@ -667,9 +677,7 @@ main {
 
 /* max-width on timeline content is handled by the .timeline-content container (650px) */
 
-.timeline-entry:first-child {
-  padding-top: var(--space-4);
-}
+/* first timeline entry intentionally inherits the same 60px padding as subsequent entries */
 
 .timeline-dates {
   font-family: var(--font-base);
