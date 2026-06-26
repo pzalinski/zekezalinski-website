@@ -665,10 +665,7 @@ main {
   border-top: 1px solid var(--color-border);
 }
 
-.timeline-content p,
-.timeline-bullets {
-  max-width: 600px;
-}
+/* max-width on timeline content is handled by the .timeline-content container (650px) */
 
 .timeline-entry:first-child {
   padding-top: var(--space-4);
@@ -691,7 +688,7 @@ main {
 
   .timeline-logo {
     flex-shrink: 0;
-    width: 170px;
+    width: 230px;
     text-align: right;
   }
 
@@ -703,7 +700,7 @@ main {
 
 @media (min-width: 1024px) {
   .timeline-logo {
-    width: 230px;
+    width: 270px;
   }
 }
 
@@ -912,6 +909,19 @@ main {
   }
 }
 
+/* Timeline body copy — match About page font sizing and line-height */
+.timeline-content p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .timeline-content p {
+    font-size: 17px;
+  }
+}
+
 /* Bulleted list inside timeline entries */
 .timeline-bullets {
   list-style: disc;
@@ -924,13 +934,13 @@ main {
 
 .timeline-bullets li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.75;
   color: var(--color-text);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .timeline-bullets li {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
