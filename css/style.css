@@ -437,6 +437,7 @@ p {
     padding: 0;
     gap: var(--space-3);
     align-items: stretch;
+    align-self: stretch; /* stretch to full nav height so active item can fill edge-to-edge */
   }
 
   .nav-links li {
@@ -452,8 +453,9 @@ p {
 
   .nav-links li a.active {
     align-self: stretch;
-    margin: 4px 0;
+    margin: 0;
     padding: 0 14px;
+    border-radius: 0; /* sharp rectangle, full nav height */
     display: flex;
     align-items: center;
   }
