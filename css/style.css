@@ -695,7 +695,7 @@ main {
 }
 
 /* ==========================================================================
-   STORY CARD GRID — stories.html index (2-col max)
+   STORY CARD GRID — stories.html index (3-col, matches Work page)
    ========================================================================== */
 
 .story-card-grid {
@@ -712,21 +712,26 @@ main {
   }
 }
 
-/* Story card overrides — image at top, copy below */
+@media (min-width: 1024px) {
+  .story-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Story card overrides — 16px padding top/left/right, 20px bottom */
 .story-card {
-  padding: 0 0 20px 0;  /* no side padding — image goes edge to edge */
+  padding: 16px 20px 20px 16px;
 }
 
 .story-card-img {
   width: 100%;
   aspect-ratio: 16 / 9;
   background-color: #E0E0DC;
-  border-radius: 12px 12px 0 0;
+  border-radius: 8px;
   margin-bottom: var(--space-3);
 }
 
 .story-card-body {
-  padding: 0 20px 0 var(--space-4);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
