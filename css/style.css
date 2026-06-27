@@ -896,63 +896,6 @@ main {
   opacity: 0.9;
 }
 
-/* ==========================================================================
-   STORIES / ARTICLE CARDS
-   ========================================================================== */
-
-.story-card {
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: var(--color-bg);
-}
-
-.story-card-img {
-  aspect-ratio: 16 / 9;
-  background-color: var(--color-bg-gray);
-  overflow: hidden;
-}
-
-.story-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.story-card-body {
-  padding: var(--space-3);
-}
-
-.story-card-body h2 {
-  font-size: 20px;
-  margin-bottom: var(--space-1);
-}
-
-.story-card-body p {
-  font-size: 15px;
-  color: var(--color-text-light);
-  margin-bottom: var(--space-2);
-}
-
-.story-card-body a.read-more {
-  color: var(--color-orange);
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.story-card-body a.read-more:hover {
-  text-decoration: underline;
-}
-
-.story-card--coming-soon .story-card-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-light);
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
 
 /* ==========================================================================
    PAGE-LEVEL PADDING (replaces old "main" padding)
