@@ -951,7 +951,13 @@ main {
   }
 }
 
-/* Timeline body copy — match About page font sizing and line-height */
+/* Timeline body copy — match About page font sizing, line-height, and paragraph gap */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
 .timeline-content p {
   font-size: 16px;
   line-height: 1.75;
