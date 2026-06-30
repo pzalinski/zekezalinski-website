@@ -26,10 +26,115 @@
   </header>
 
   <main>
-    <div class="container page-content">
-      <h1>Who is the real UXD?</h1>
-      <p class="placeholder-note">[Story 1 — full case study text: intro + 5 subheads (The Challenge, The Real Work, The Partnership, The Outcome, What I Learned) — see specs/site-spec-v1.md and _inputs/story-1-content.md]</p>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Who is the real UXD?</h1>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ── Intro ─────────────────────────────────────────────────── -->
+      <div class="content-section">
+        <div class="story-body">
+          <p>When I joined VelocityEHS in June of 2021, the company had a product suite of 10+ applications collected through acquisitions. Each product was essentially an island. Each designer had their own fiefdom. There was no guiding principle, no unified architecture, no system of shared components or standards. The front end developers weren't much better, as they were scattered across products, each running their own CSS, with the loudest voice setting the direction regardless of what UX had designed. Everything was one-off solutions. Everything was inconsistent.</p>
+          <p>I started on a single product: Operational Risk, newly acquired by the company out of Perth, Australia. But I was paying attention to the department, sitting in presentations, listening to UX leadership support in other ways; but not unifying the designers or the department. I saw designers who'd been there for years working in isolation, with no modern process and no shared language. I saw a design system concept on paper — eight components, a navigation framework, no architecture but an assumption that it was done. It wasn't.</p>
+          <p>My experience designing ecommerce sites within the defined component libraries of Demandware and Magento had shown me the breadth a design system could have. And the years designing for custom CMS systems, breaking down function into the fewest possible, most stable components made it immediately clear: they were undershooting by a mile.</p>
+        </div>
+      </div>
+
+      <!-- ── The Challenge ──────────────────────────────────────────── -->
+      <div class="content-section">
+        <h2 class="story-chapter-title">The Challenge: Building The System</h2>
+        <div class="story-body">
+          <p>I had a choice. I could take the director role and overhaul their work top-down, risking alienating the team. Or I could prove my vision by building it alongside the work I was already doing.</p>
+          <p>I chose the latter. While I was working on Operational Risk, I started building out components for that product — slowly, methodically adding to their design system concept, writing acceptance criteria and functionality notes with each addition. By the time I was elevated to lead the department, I had proof. I had a working system. I had components that solved real problems. Then I could say, "Here's what we're going to build from."</p>
+          <p>When I took over, the department was myself and five designers. My first move was organizational. The Figma files were scattered — 10, 15, 30 artboards all over the place. Only the originators knew where anything was. I created a logical structure with sections (Buttons, Notifications, Forms, Cards, Templates) on individual pages. When you shared a link to "Toast Messages," the person receiving it only saw that section. That solved discoverability immediately.</p>
+        </div>
+        <div class="image-grid story-image-grid">
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">ADS — Component Library Overview</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">ADS — Section Structure (Buttons / Forms / Cards / Templates)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── The Real Work ──────────────────────────────────────────── -->
+      <div class="content-section">
+        <h2 class="story-chapter-title">The Real Work: Governance &amp; Process</h2>
+        <div class="story-body">
+          <p>Building the system was the easy part. The hard part was teaching the organization how to use it.</p>
+          <p>Product managers who'd been running their applications like fiefdoms resisted immediately. They were used to throwing everything at UX designers — go talk to marketing, find imagery, manage imagery, run discovery, execute in a day or two. I had to run interference. I defined what UX owns and what UX doesn't own. I taught my team to hold those boundaries. And I showed the product managers that if they communicated differently — written Jira tickets with clear acceptance criteria, well-formed briefs, proper context — the entire system would move faster and produce better work.</p>
+          <p>I created a Kanban flow where UX iterated cleanly in Sprint Zero, then handed off fully-formed decisions to front end development. The back-and-forth chaos stopped. Consistency showed up immediately.</p>
+          <p>The most visible proof point was the navigational umbrella — a unified structure that lived across every application. When we said an application had been brought into the "Accelerate experience," users felt it immediately. Same navigation. Same component language. Same architecture. I designed that umbrella myself. And I built an architectural library in Figma so designers didn't have to reinvent. They pulled a master template (detail page with side callout, table, etc.) and customized the use cases on top of a solid foundation.</p>
+        </div>
+        <div class="image-grid story-image-grid">
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Accelerate Nav Umbrella — Application A</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Accelerate Nav Umbrella — Application B</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Architectural Template Library (Figma master templates)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── The Partnership ────────────────────────────────────────── -->
+      <div class="content-section">
+        <h2 class="story-chapter-title">The Partnership: Design &amp; Development</h2>
+        <div class="story-body">
+          <p>For the first 6–9 months, the front end team didn't have leadership. They were still scattered. When the new FE lead arrived, I presented the ADS as complete and ready to go. Together, we built the master CSS library — hundreds of complex components by the end of my tenure, scaling across 6 Scrum teams working on separate products.</p>
+          <p>When the system didn't solve something, that's where custom design happened. And those custom solutions fed back into ADS to make it better. I created a feedback loop, not a prison. Innovation lived inside the structure.</p>
+          <p>The strategy shifted about three years in. We'd promised clients a new "Accelerate" look and feel, but we'd built the system for new products only. The company wanted to retrofit the existing portfolio to feel unified too. So we pivoted. We spent the last year and a half retrofitting legacy applications into the Accelerate umbrella — keeping the old CSS where necessary, but bringing consistency, navigation, and component language under one roof.</p>
+        </div>
+        <div class="image-grid story-image-grid">
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">ADS — Complex Component Detail</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Legacy App Retrofitted into Accelerate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── The Outcome ────────────────────────────────────────────── -->
+      <div class="content-section">
+        <h2 class="story-chapter-title">The Outcome: 95 Percent</h2>
+        <div class="story-body">
+          <p>By late 2024 and early 2025, the company had migrated 95–96 percent of its customer base into the Accelerate experience. That's not a design win. That's a business transformation that design enabled.</p>
+          <p>Speed didn't mean individual design cycles got faster. It meant the system got faster and more organized. Consistency was enormous — users moving between applications now saw themselves in a coherent product family, not a collection of mismatched tools. Sales had demos that showed feature parity and visual unity. The organization finally had a language to talk about what "Accelerate" actually meant.</p>
+          <p>By defining boundaries, teaching process, and building a system that designers could trust, I transformed the department from a collection of individual contributors into a machine that shipped consistently.</p>
+        </div>
+        <div class="image-grid story-image-grid">
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Accelerate — Product 1 (final state)</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Accelerate — Product 2 (final state)</span>
+          </div>
+          <div class="image-cell image-cell--empty">
+            <span class="image-cell--empty-label">Accelerate — Product 3 (final state)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── What I Learned ─────────────────────────────────────────── -->
+      <div class="content-section" style="margin-bottom: var(--space-10);">
+        <h2 class="story-chapter-title">What I Learned</h2>
+        <div class="story-body">
+          <p>Building design systems and leading teams through process change came naturally to me. But what I learned at VelocityEHS was governance and communication — how to explain to an organization what UX can do for you, how we'll do it, and how efficient we can be in doing it that way.</p>
+          <p>UX is invisible until you make it visible. The design system wasn't the point. The point was showing the entire organization that UX isn't a department that designs pretty screens. It's the connective tissue that makes everything else work better — if you let it, and if you listen to how it asks to be used.</p>
+          <p>That lesson scales beyond any single company or product. It's what I bring to the next role.</p>
+        </div>
+      </div>
+
     </div>
+
   </main>
 
   <footer class="site-footer">

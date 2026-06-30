@@ -1408,3 +1408,53 @@ main {
   text-transform: uppercase;
   color: var(--color-text-light);
 }
+
+/* ==========================================================================
+   STORY / CASE STUDY PAGES
+   ========================================================================== */
+
+/* Chapter heading — orange, bold, sits above body copy */
+.story-chapter-title {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-orange);
+  line-height: 1.25;
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .story-chapter-title {
+    font-size: 26px;
+  }
+}
+
+/* Body copy wrapper — caps line length for readability */
+.story-body {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.story-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .story-body p {
+    font-size: 17px;
+  }
+}
+
+/* Story image grid — 16/9 aspect cells, 2-col default, 3-col on wide */
+.story-image-grid {
+  margin-top: 0;
+}
+
+.story-image-grid .image-cell--empty {
+  aspect-ratio: 16 / 9;
+}
