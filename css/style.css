@@ -1410,9 +1410,6 @@ main {
   gap: var(--space-4);
 }
 
-.accordion-trigger:hover .accordion-item-title {
-  opacity: 0.75;
-}
 
 .accordion-item-title {
   font-family: var(--font-base);
@@ -1425,19 +1422,15 @@ main {
 
 .accordion-arrow {
   flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  background-color: var(--color-orange);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
 .accordion-trigger[aria-expanded="true"] .accordion-arrow {
   transform: rotate(180deg);
+}
+
+.accordion-trigger:hover .accordion-arrow {
+  opacity: 0.88;
 }
 
 /* Body: hidden by default using max-height animation */
