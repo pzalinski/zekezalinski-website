@@ -1321,6 +1321,178 @@ main {
 }
 
 /* ==========================================================================
+   ABOUT PAGE — new components (image grid, accordion, page subhead)
+   ========================================================================== */
+
+/* Subhead below h1 in page-header */
+.page-subhead {
+  font-family: var(--font-base);
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--color-orange);
+  line-height: 1.4;
+  margin-top: var(--space-2);
+}
+
+/* ── 4-image grid ──────────────────────────────────────────────── */
+
+.about-image-grid {
+  padding-bottom: var(--space-6);
+}
+
+.about-image-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Tablet: 2-column grid */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .about-image-grid-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column, hide first 3 images */
+@media (max-width: 599px) {
+  .about-image-grid-inner {
+    grid-template-columns: 1fr;
+  }
+  .about-img-hide-mobile {
+    display: none;
+  }
+}
+
+.about-image-frame {
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.about-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── First section: always-open, no border-top ─────────────────── */
+
+.about-section--first {
+  border-top: none;
+  padding-top: var(--space-5);
+}
+
+/* ── Accordion ─────────────────────────────────────────────────── */
+
+.about-accordion {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-3);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-4) 0;
+  text-align: left;
+  gap: var(--space-4);
+}
+
+.accordion-trigger:hover .accordion-item-title {
+  opacity: 0.75;
+}
+
+.accordion-item-title {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-orange);
+  line-height: 1.3;
+  transition: opacity 0.15s ease;
+}
+
+.accordion-arrow {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.25s ease;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+/* Body: hidden by default using max-height animation */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-body.is-open {
+  max-height: 1200px;
+}
+
+.accordion-body-inner {
+  padding-bottom: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 650px;
+}
+
+.accordion-body-inner p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .accordion-body-inner p {
+    font-size: 17px;
+  }
+  /* On tablet+, indent body to align with right column */
+  .accordion-body-inner {
+    margin-left: calc(230px + var(--space-8));
+  }
+  .accordion-trigger {
+    padding: var(--space-5) 0;
+  }
+  .accordion-item-title {
+    width: 230px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accordion-body-inner {
+    margin-left: calc(270px + var(--space-8));
+  }
+  .accordion-item-title {
+    width: 270px;
+  }
+}
+
+/* ==========================================================================
    WORK SUB-PAGES — project card hybrid layout
    ========================================================================== */
 

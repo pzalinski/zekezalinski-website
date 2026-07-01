@@ -21,25 +21,26 @@
     });
   }
 
-  /* ── About page: rotating hero images ─────────────────────────── */
-  var heroImgs = document.querySelectorAll('.about-hero-img');
-  var heroDots = document.querySelectorAll('.about-dot');
+  /* ── About page: accordion sections ───────────────────────────── */
+  document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var item = trigger.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
 
-  if (heroImgs.length > 1) {
-    var current = 0;
+      // Close all other open items
+      document.querySelectorAll('.accordion-item').forEach(function (otherItem) {
+        otherItem.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        otherItem.querySelector('.accordion-body').classList.remove('is-open');
+      });
 
-    function showSlide(index) {
-      heroImgs[current].classList.remove('active');
-      heroDots[current].classList.remove('active');
-      current = index % heroImgs.length;
-      heroImgs[current].classList.add('active');
-      heroDots[current].classList.add('active');
-    }
-
-    setInterval(function () {
-      showSlide(current + 1);
-    }, 4000);
-  }
+      // Toggle this one
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        body.classList.add('is-open');
+      }
+    });
+  });
 
   /* ── Work pages: More / Less image expand ─────────────────────── */
   document.querySelectorAll('.project-more-btn').forEach(function (btn) {

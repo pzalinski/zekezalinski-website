@@ -27,17 +27,40 @@
 
   <main>
 
+    <!-- Page header: h1 + subhead -->
     <section class="page-header">
       <div class="container">
         <h1>A little bit about myself.</h1>
+        <p class="page-subhead">Call it a background check.</p>
       </div>
     </section>
 
-    <!-- Content sections: title left, copy right -->
+    <!-- 4-image grid -->
+    <section class="about-image-grid">
+      <div class="container">
+        <div class="about-image-grid-inner">
+          <div class="about-image-frame about-img-hide-mobile">
+            <img src="images/about/hero1.png" alt="Zeke Zalinski">
+          </div>
+          <div class="about-image-frame about-img-hide-mobile">
+            <img src="images/about/hero2.png" alt="Zeke Zalinski">
+          </div>
+          <div class="about-image-frame about-img-hide-mobile">
+            <img src="images/about/hero3.png" alt="Zeke Zalinski">
+          </div>
+          <div class="about-image-frame">
+            <img src="images/about/hero4.png" alt="Zeke Zalinski">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content sections -->
     <section class="about-sections">
       <div class="container">
 
-        <div class="about-section">
+        <!-- Section 1: Always visible -->
+        <div class="about-section about-section--first">
           <div class="about-section-title">Origin &amp; Arc</div>
           <div class="about-section-body">
             <p>The two most significant roles of my career, I didn't apply for. Someone who had watched me work raised their hand and said my name.</p>
@@ -47,32 +70,64 @@
           </div>
         </div>
 
-        <div class="about-section">
-          <div class="about-section-title">Leadership Philosophy</div>
-          <div class="about-section-body">
-            <p>I think about design organizations the way a good architect thinks about buildings — the structure has to work before the surfaces can be beautiful. Process, documentation, scope clarity, cross-functional trust: these aren't bureaucratic overhead. They're what let designers do their best work without burning out or reinventing the wheel every sprint.</p>
-            <p>I've built departments from scratch and restructured ones that weren't working. In both cases, the first job is the same: understand the people, understand the gaps, and earn the trust of the team before you change anything. The org chart is the last thing you touch, not the first.</p>
-            <p>I also believe the best design leaders stay close to the craft. Not to micromanage — but because you can't lead what you don't understand. I still sketch. I still push pixels when it matters. I still sit in the room when the hard UX problem needs to be solved. That's not a weakness in a director. That's the difference between someone who leads design and someone who manages designers.</p>
-          </div>
-        </div>
+        <!-- Accordion sections -->
+        <div class="about-accordion">
 
-        <div class="about-section">
-          <div class="about-section-title">Thoughts on AI.</div>
-          <div class="about-section-body">
-            <p>My first real use of AI wasn't for design — it was for my team. I wrote short impressions of each person, combined that with their previous goals, and asked AI to help me build the next set. It got me 80% of the way there before I'd finished my coffee. That was the moment I understood what AI actually is: a thinking partner that eliminates the blank page and compresses the distance between intention and direction.</p>
-            <p>The tools I reach for — Figma's Make AI, Lovable — have worked best when they're working from something that already exists. A defined design system. Established architecture. Years of decisions already baked in. That context is what has helped our AI separate its output from generic proof of concepts. Within that structure, AI has meaningfully accelerated ideation, tightened the handoff between design and product, and let teams explore in hours what used to take weeks. It's also shown me its limits: the deeper and more specific the system, the more effort it can be for AI to operate at the required precision. That gap still requires a trained eye, accumulated context, and the kind of judgment you can't prompt your way to.</p>
-            <p>Looking forward, what excites me most isn't AI replacing design work — it's AI putting new product creation into a different gear entirely. The distance from idea to market is collapsing. Prompting agents to execute large-scale effort in hours rather than weeks is real, and I want to be building in that space. The teams I want to lead next are ones where design, architecture, and AI capability are working together from day one — not bolted on after the fact. That's where the interesting work is going to happen.</p>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-item-title">Thoughts on Leadership.</span>
+              <span class="accordion-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                <p>I think about design organizations the way a good architect thinks about buildings — the structure has to work before the surfaces can be beautiful. Process, documentation, scope clarity, cross-functional trust: these aren't bureaucratic overhead. They're what let designers do their best work without burning out or reinventing the wheel every sprint.</p>
+                <p>I've built departments from scratch and restructured ones that weren't working. In both cases, the first job is the same: understand the people, understand the gaps, and earn the trust of the team before you change anything. The org chart is the last thing you touch, not the first.</p>
+                <p>I also believe the best design leaders stay close to the craft. Not to micromanage — but because you can't lead what you don't understand. I still sketch. I still push pixels when it matters. I still sit in the room when the hard UX problem needs to be solved. That's not a weakness in a director. That's the difference between someone who leads design and someone who manages designers.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="about-section about-section--last">
-          <div class="about-section-title">Experience Through Life</div>
-          <div class="about-section-body">
-            <p>I'm an experience person. I draw inspiration and happiness from the experiences I have and the ones I help create. Every project, every team, every problem worth solving is a collection of moments that a clear head and an inspired idea can change.</p>
-            <p>I dare say we all want our life to be smooth — at home and at work. I put in the time to achieve that balance, and I bring that same intention to every team I join. If you can pause and ask "what are we solving for?" — great work gets done.</p>
-            <p class="about-closing-tagline">We are the experiences we have and create.</p>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-item-title">Evolving on AI.</span>
+              <span class="accordion-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                <p>My first real use of AI wasn't for design — it was for my team. I wrote short impressions of each person, combined that with their previous goals, and asked AI to help me build the next set. It got me 80% of the way there before I'd finished my coffee. That was the moment I understood what AI actually is: a thinking partner that eliminates the blank page and compresses the distance between intention and direction.</p>
+                <p>The tools I reach for — Figma's Make AI, Lovable — have worked best when they're working from something that already exists. A defined design system. Established architecture. Years of decisions already baked in. That context is what has helped our AI separate its output from generic proof of concepts. Within that structure, AI has meaningfully accelerated ideation, tightened the handoff between design and product, and let teams explore in hours what used to take weeks. It's also shown me its limits: the deeper and more specific the system, the more effort it can be for AI to operate at the required precision. That gap still requires a trained eye, accumulated context, and the kind of judgment you can't prompt your way to.</p>
+                <p>Looking forward, what excites me most isn't AI replacing design work — it's AI putting new product creation into a different gear entirely. The distance from idea to market is collapsing. Prompting agents to execute large-scale effort in hours rather than weeks is real, and I want to be building in that space. The teams I want to lead next are ones where design, architecture, and AI capability are working together from day one — not bolted on after the fact. That's where the interesting work is going to happen.</p>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <div class="accordion-item accordion-item--last">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-item-title">Life.</span>
+              <span class="accordion-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                <p>I'm an experience person. I draw inspiration and happiness from the experiences I have and the ones I help create. Every project, every team, every problem worth solving is a collection of moments that a clear head and an inspired idea can change.</p>
+                <p>I dare say we all want our life to be smooth — at home and at work. I put in the time to achieve that balance, and I bring that same intention to every team I join. If you can pause and ask "what are we solving for?" — great work gets done.</p>
+                <p class="about-closing-tagline">We are the experiences we have and create.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /about-accordion -->
 
       </div>
     </section>
