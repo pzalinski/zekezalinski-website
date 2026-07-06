@@ -728,6 +728,13 @@ main {
   }
 }
 
+/* Only one real story published so far — cap width so the single card
+   doesn't sit awkwardly in a 3-wide row with empty space beside it.
+   Remove this modifier class from stories.html once Story 2 goes live. */
+.story-card-grid--single {
+  grid-template-columns: minmax(0, 400px);
+}
+
 /* Story card overrides — tighter, content-driven height */
 .story-card {
   padding: 16px 20px 20px 16px;
@@ -911,6 +918,36 @@ main {
 
 .image-cell:hover img {
   opacity: 0.9;
+}
+
+/* 4-column square variant — used on Application UXD, same grid pattern
+   as the About page's 4-image hero. Add "image-grid--square4" alongside
+   "image-grid" to opt a page's grid into this treatment. */
+.image-grid--square4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .image-grid--square4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-grid--square4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.image-grid--square4 .image-cell {
+  aspect-ratio: 1 / 1;
+}
+
+.image-grid--square4 .image-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 
@@ -1657,6 +1694,51 @@ main {
 
 .lightbox-close:hover {
   opacity: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-nav[disabled] {
+  display: none;
+}
+
+.lightbox-prev {
+  left: -60px;
+}
+
+.lightbox-next {
+  right: -60px;
+}
+
+@media (max-width: 900px) {
+  .lightbox-prev {
+    left: 8px;
+  }
+  .lightbox-next {
+    right: 8px;
+  }
 }
 
 /* Pointer cursor on clickable image cells */
