@@ -740,6 +740,14 @@ main {
   background-color: #E0E0DC;
   border-radius: 8px;
   margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.story-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .story-card-body {
