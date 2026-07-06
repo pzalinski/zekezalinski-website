@@ -1543,7 +1543,6 @@ main {
    WORK SUB-PAGES — project card hybrid layout
    ========================================================================== */
 
-/* Application project logo — transparent PNG, fixed height */
 /* Project title — orange, reuses timeline-title weight/size without the separator */
 .work-project-title {
   font-family: var(--font-base);
@@ -1575,6 +1574,27 @@ main {
 
 .content-section.is-expanded .image-cell.more-img {
   display: block;
+}
+
+/* Phone-width only: trim to the first 2 thumbnails per project so the
+   page doesn't turn into an endless scroll. Tablet and desktop are
+   unaffected — this class only hides anything below 600px. */
+@media (max-width: 599px) {
+  .image-cell.mobile-more-img {
+    display: none;
+  }
+
+  .content-section.is-expanded .image-cell.mobile-more-img {
+    display: block;
+  }
+}
+
+/* Some projects only need a More button on phone-width screens — there's
+   nothing extra to reveal once the grid opens up to 2+ columns. */
+@media (min-width: 600px) {
+  .project-more-btn--mobile-only {
+    display: none;
+  }
 }
 
 /* More / Less toggle button */
