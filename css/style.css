@@ -1544,13 +1544,6 @@ main {
    ========================================================================== */
 
 /* Application project logo — transparent PNG, fixed height */
-.project-logo {
-  height: 48px;
-  width: auto;
-  display: block;
-  margin-bottom: var(--space-2);
-}
-
 /* Project title — orange, reuses timeline-title weight/size without the separator */
 .work-project-title {
   font-family: var(--font-base);
