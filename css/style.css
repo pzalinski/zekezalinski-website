@@ -1004,12 +1004,11 @@ main {
 }
 
 .timeline-title::after {
-  content: "/";
+  content: " / ";
   font-family: var(--font-base);
   font-weight: 400;
   font-size: 20px;
   color: var(--color-text);
-  margin: 0 8px;
 }
 
 .timeline-dates {
@@ -1017,7 +1016,6 @@ main {
   font-weight: 400;
   font-size: 20px;
   color: var(--color-text);
-  letter-spacing: 0.02em;
 }
 
 /* Logo images — constrain and contain within their column */
