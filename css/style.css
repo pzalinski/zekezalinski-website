@@ -846,14 +846,6 @@ main {
 
 /* first timeline entry intentionally inherits the same 60px padding as subsequent entries */
 
-.timeline-dates {
-  font-family: var(--font-base);
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--color-text);
-  letter-spacing: 0.02em;
-}
-
 @media (min-width: 768px) {
   .timeline-entry {
     flex-direction: row;
@@ -1012,15 +1004,15 @@ main {
 }
 
 .timeline-title::after {
-  content: "\00a0\00a0\005C\00a0\00a0";
-  font-weight: 300;
-  color: var(--color-text-light);
+  content: "\00a0\00a0/\00a0\00a0";
+  font-weight: 400;
+  color: var(--color-text);
 }
 
 .timeline-dates {
   font-family: var(--font-base);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
   color: var(--color-text);
   letter-spacing: 0.02em;
 }
