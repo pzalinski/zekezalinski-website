@@ -196,7 +196,7 @@ ul {
   font-size: 20px;
   line-height: 1.3;
   color: var(--color-text);
-  margin-top: var(--space-2);
+  margin-top: 15px;
   margin-bottom: var(--space-5);
 }
 
@@ -302,7 +302,7 @@ p {
   }
 
   .hero-tagline {
-    font-size: 54px;
+    font-size: 42px;
   }
 }
 
