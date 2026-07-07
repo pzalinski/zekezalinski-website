@@ -1555,6 +1555,28 @@ main {
   }
 }
 
+/* Origin & Arc — first section, converted from static to collapsible.
+   Scoped overrides (not edits to the shared rules above) so only this
+   section gets tighter padding; Thoughts on Leadership / Evolving on AI / Life
+   keep their original spacing. */
+.about-section-first {
+  border-bottom: none;
+}
+
+.about-section-first .accordion-trigger {
+  padding: 22px 0;
+}
+
+.about-section-first .accordion-body-inner {
+  padding-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .about-section-first .accordion-trigger {
+    padding: 30px 0;
+  }
+}
+
 /* ==========================================================================
    WORK SUB-PAGES — project card hybrid layout
    ========================================================================== */

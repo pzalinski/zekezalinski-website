@@ -59,12 +59,19 @@
     <section class="about-sections">
       <div class="container">
 
-        <!-- Section 1: Always visible -->
-        <div class="about-section about-section--first">
-          <div class="about-section-title">Origin &amp; Arc</div>
-          <div class="about-section-body">
-            <p>If you go back far enough you get stories of me at eight years old walking around with a bag of 60-plus Crayola markers, willing to draw on anything. My parents probably would have been early adopters of Washable Crayola. I colored the walls more than once.</p>
-            <p>High school was two years sneaking into the art studio, then two years never leaving. Painting and sculpture were my thing. Graphic design became my path from canvas to screen. Twenty-five-plus years later I'm still designing things, still looking for a good team and good culture, and still trying to add value with work that actually matters to the people using it.</p>
+        <!-- Section 1: Collapsible, defaults open on load -->
+        <div class="accordion-item about-section-first">
+          <button class="accordion-trigger" aria-expanded="true">
+            <span class="accordion-item-title">Origin &amp; Arc</span>
+            <span class="work-card-btn accordion-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(90deg);"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </button>
+          <div class="accordion-body is-open">
+            <div class="accordion-body-inner">
+              <p>If you go back far enough you get stories of me at eight years old walking around with a bag of 60-plus Crayola markers, willing to draw on anything. My parents probably would have been early adopters of Washable Crayola. I colored the walls more than once.</p>
+              <p>High school was two years sneaking into the art studio, then two years never leaving. Painting and sculpture were my thing. Graphic design became my path from canvas to screen. Twenty-five-plus years later I'm still designing things, still looking for a good team and good culture, and still trying to add value with work that actually matters to the people using it.</p>
+            </div>
           </div>
         </div>
 
