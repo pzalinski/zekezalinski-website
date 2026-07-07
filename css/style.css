@@ -1545,12 +1545,22 @@ main {
 
 /* Project title — orange, reuses timeline-title weight/size without the separator */
 .work-project-title {
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+
+.work-project-name {
   font-family: var(--font-base);
   font-weight: 700;
   font-size: 20px;
   color: var(--color-orange);
-  line-height: 1.3;
-  margin-bottom: var(--space-2);
+}
+
+.work-project-meta {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-text);
 }
 
 .work-project-desc {
