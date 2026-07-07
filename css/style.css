@@ -1004,9 +1004,12 @@ main {
 }
 
 .timeline-title::after {
-  content: "\00a0\00a0/\00a0\00a0";
+  content: "/";
+  font-family: var(--font-base);
   font-weight: 400;
+  font-size: 20px;
   color: var(--color-text);
+  margin: 0 8px;
 }
 
 .timeline-dates {
