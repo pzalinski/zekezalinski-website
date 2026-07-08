@@ -181,11 +181,15 @@ ul {
 }
 
 /* EXPERIMENTAL — hero headline reveal animation, 2026-07-08.
-   Borrowed the mechanics from adrianmuntean.com's homepage: the text
-   sits in a clipped mask and slides up into place on load, instead of
-   just appearing. To fully undo: delete this block, plus the two
-   <span class="reveal-line">/<span class="reveal-line-inner"> wraps
-   around the headline text in index.html. */
+   Borrowed the mechanics from adrianmuntean.com's homepage: each
+   actual rendered line of the headline sits in a clipped mask and
+   slides up into place on load, staggered slightly per line, instead
+   of just appearing. The .reveal-line / .reveal-line-inner wrapper
+   spans are generated at runtime by main.js (see the hero headline
+   section there) since the headline text wraps differently at every
+   breakpoint — there's no fixed set of lines to hand-author in the
+   HTML. To fully undo: delete this CSS block and the matching
+   "Homepage: hero headline line-reveal" block in main.js. */
 .reveal-line {
   display: block;
   overflow: clip;

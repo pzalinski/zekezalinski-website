@@ -147,4 +147,75 @@
     });
   }
 
+  /* ── Homepage: hero headline line-reveal animation ────────────────
+     EXPERIMENTAL, 2026-07-08. Detects the headline's actual rendered
+     line breaks (they change at every breakpoint, so there's no fixed
+     set to hand-author in the HTML) and wraps each one in the
+     .reveal-line / .reveal-line-inner mask so the CSS slide-up
+     animation (see style.css) plays per line, staggered slightly —
+     same technique as adrianmuntean.com's homepage headline.
+     To undo: delete this whole block, plus the .reveal-line /
+     .reveal-line-inner / @keyframes hero-line-in rules in style.css. */
+  var heroHeadline = document.querySelector('.hero-headline');
+
+  if (heroHeadline) {
+    var LINE_DELAY_MS = 120; // stagger between lines, matches source site
+
+    function buildRevealLines() {
+      var originalText = heroHeadline.textContent;
+
+      // Measuring pass: wrap each word so we can read which rendered
+      // line it lands on. Split on plain spaces only — the &nbsp;
+      // gluing "when … " together stays intact, matching how the
+      // browser itself decides where the line is allowed to break.
+      var words = originalText.split(' ').filter(function (w) { return w.length > 0; });
+      heroHeadline.innerHTML = words.map(function (w) {
+        return '<span class="reveal-measure">' + w + '</span>';
+      }).join(' ');
+
+      var wordSpans = Array.prototype.slice.call(heroHeadline.querySelectorAll('.reveal-measure'));
+      var lineTops = [];
+      var lineWords = [];
+
+      wordSpans.forEach(function (span) {
+        var top = Math.round(span.getBoundingClientRect().top);
+        var idx = lineTops.indexOf(top);
+        if (idx === -1) {
+          lineTops.push(top);
+          lineWords.push([span.textContent]);
+        } else {
+          lineWords[idx].push(span.textContent);
+        }
+      });
+
+      heroHeadline.innerHTML = lineWords.map(function (wordsInLine, i) {
+        var lineText = wordsInLine.join(' ');
+        var delay = i * LINE_DELAY_MS;
+        return '<span class="reveal-line"><span class="reveal-line-inner" style="animation-delay:' + delay + 'ms">' + lineText + '</span></span>';
+      }).join('');
+    }
+
+    // Hide briefly while we measure against the real web font — a
+    // fallback-font measurement could group words onto the wrong
+    // lines right up until Playfair Display finishes loading.
+    heroHeadline.style.visibility = 'hidden';
+
+    var revealed = false;
+    function revealHeadline() {
+      if (revealed) { return; }
+      revealed = true;
+      buildRevealLines();
+      heroHeadline.style.visibility = '';
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(revealHeadline);
+    } else {
+      window.addEventListener('load', revealHeadline);
+    }
+    // Safety net: never leave the headline permanently hidden if font
+    // loading stalls for some reason.
+    setTimeout(revealHeadline, 1500);
+  }
+
 }());
