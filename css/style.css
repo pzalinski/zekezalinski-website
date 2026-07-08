@@ -1487,6 +1487,15 @@ main {
   transition: opacity 0.15s ease;
 }
 
+/* Below the tablet breakpoint the title has no fixed column width to
+   spill past, so a long one-liner (e.g. "Thoughts on Leadership.")
+   pushes the arrow button off screen. Let it wrap on phones only. */
+@media (max-width: 767px) {
+  .accordion-item-title {
+    white-space: normal;
+  }
+}
+
 .accordion-arrow {
   flex-shrink: 0;
   transition: transform 0.25s ease, opacity 0.2s ease;
