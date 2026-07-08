@@ -237,7 +237,7 @@ h1, .h1 {
 
 @media (min-width: 1024px) {
   h1, .h1 {
-    font-size: 120px;
+    font-size: 56px;
   }
 }
 
@@ -279,10 +279,6 @@ p {
 @media (min-width: 1024px) {
   .hero-closer {
     font-size: 26px;
-  }
-
-  h1, .h1 {
-    font-size: 56px;
   }
 
   h2, .h2 {
