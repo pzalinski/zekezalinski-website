@@ -38,6 +38,20 @@
       if (!isOpen) {
         trigger.setAttribute('aria-expanded', 'true');
         body.classList.add('is-open');
+
+        // Scroll so this section's header settles just below the sticky
+        // site header, instead of wherever it lands after another
+        // section collapses above it — on mobile that shift can push
+        // the section you just opened up out of view. Wait for the
+        // open/close max-height transitions (350ms, see style.css) to
+        // finish so we measure the final resting position, not a
+        // mid-animation one.
+        setTimeout(function () {
+          var header = document.querySelector('.site-header');
+          var headerHeight = header ? header.offsetHeight : 0;
+          var targetY = item.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }, 360);
       }
     });
   });
