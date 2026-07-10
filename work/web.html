@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-31R0C276QL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31R0C276QL');
+  </script>
   <title>Web UXD — Zeke Zalinski</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -151,7 +159,7 @@
       <div class="footer-columns">
         <div class="footer-col">
           <span class="footer-label">Say hello.</span>
-          <a href="mailto:pzalinski@me.com" class="icon-btn icon-btn--orange" aria-label="Email">
+          <a href="mailto:pzalinski@me.com" class="icon-btn icon-btn--orange" aria-label="Email" onclick="gtag('event', 'contact_click', {'event_category': 'engagement', 'event_label': 'footer_email'});">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
