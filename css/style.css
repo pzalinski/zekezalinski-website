@@ -1766,14 +1766,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 90vw;
+  height: 90vh;
 }
 
 .lightbox-img {
   display: block;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
 }
