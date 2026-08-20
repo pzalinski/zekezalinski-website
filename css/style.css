@@ -1433,8 +1433,8 @@ main {
 /* Subhead below h1 in page-header */
 .page-subhead {
   font-family: var(--font-base);
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
   color: var(--color-orange);
   line-height: 1.4;
   margin-top: var(--space-2);
