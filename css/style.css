@@ -1905,3 +1905,10 @@ main {
 .story-image-grid .image-cell--empty {
   aspect-ratio: 16 / 9;
 }
+
+/* When a gallery leads a section (image before text) rather than
+   following it, add the same spacing below it that story-body's own
+   margin-bottom already provides above it in the normal order. */
+.story-image-grid + .story-body {
+  margin-top: var(--space-5);
+}
