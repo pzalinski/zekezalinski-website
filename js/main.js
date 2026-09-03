@@ -82,16 +82,16 @@
     lb.innerHTML =
       '<div class="lightbox-overlay"></div>' +
       '<div class="lightbox-frame">' +
-      '  <button class="lightbox-close" aria-label="Close image viewer">' +
+      '  <button class="lightbox-close" aria-label="Close image viewer" tabindex="-1">' +
       '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
       '      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>' +
       '    </svg>' +
       '  </button>' +
-      '  <button class="lightbox-nav lightbox-prev" aria-label="Previous image">' +
+      '  <button class="lightbox-nav lightbox-prev" aria-label="Previous image" tabindex="-1">' +
       '    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
       '  </button>' +
       '  <img class="lightbox-img" src="" alt="">' +
-      '  <button class="lightbox-nav lightbox-next" aria-label="Next image">' +
+      '  <button class="lightbox-nav lightbox-next" aria-label="Next image" tabindex="-1">' +
       '    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
       '  </button>' +
       '</div>';
@@ -128,6 +128,9 @@
       showAt(gallery.indexOf(img));
       lb.classList.add('is-open');
       lb.setAttribute('aria-hidden', 'false');
+      lbClose.removeAttribute('tabindex');
+      lbPrev.removeAttribute('tabindex');
+      lbNext.removeAttribute('tabindex');
       document.body.style.overflow = 'hidden';
       lbClose.focus();
     }
@@ -135,6 +138,9 @@
     function closeLightbox() {
       lb.classList.remove('is-open');
       lb.setAttribute('aria-hidden', 'true');
+      lbClose.setAttribute('tabindex', '-1');
+      lbPrev.setAttribute('tabindex', '-1');
+      lbNext.setAttribute('tabindex', '-1');
       document.body.style.overflow = '';
       lbImg.src = '';
       gallery = [];
